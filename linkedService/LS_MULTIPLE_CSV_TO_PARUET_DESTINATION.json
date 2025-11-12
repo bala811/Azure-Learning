@@ -1,0 +1,13 @@
+{
+	"name": "LS_MULTIPLE_CSV_TO_PARUET_DESTINATION",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "DESTINATION LOCATION CONTAINER FOR DATA",
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=bulkdatastore;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDFCRUFCMUNDLTVFNkItNDJFMi1BNDM0LTUxRjIxOEM2ODJBMl8zNDNmNzA3ZC0zMmYzLTQ5M2MtYTQyOS1lZGVjOWRkYmExOTQiDQp9"
+		}
+	}
+}
