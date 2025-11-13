@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "Vision-Board-Project-ADF"
+		},
+		"DS_MULTIPLE_CSV_TO_PARUET_DESTINATION_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_MULTIPLE_CSV_TO_PARUET_DESTINATION'"
+		},
+		"LS_MULTIPLE_CSV_TO_PARUET_DESTINATION_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_MULTIPLE_CSV_TO_PARUET_DESTINATION'"
+		},
+		"LS_MULTIPLE_CSV_TO_SINGLE_PARUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_MULTIPLE_CSV_TO_SINGLE_PARUET'"
+		},
+		"DS_MULTIPLE_CSV_TO_PARUET_DESTINATION_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://bulkdatastore.dfs.core.windows.net/"
+		},
+		"LS_MULTIPLE_CSV_TO_SINGLE_PARUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://bulkloadsource.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "Vision-Board-Project-ADF_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"DS_MULTIPLE_CSV_TO_PARUET_DESTINATION_accountKey": {
+						"value": "[parameters('DS_MULTIPLE_CSV_TO_PARUET_DESTINATION_accountKey')]"
+					},
+					"LS_MULTIPLE_CSV_TO_PARUET_DESTINATION_connectionString": {
+						"value": "[parameters('LS_MULTIPLE_CSV_TO_PARUET_DESTINATION_connectionString')]"
+					},
+					"LS_MULTIPLE_CSV_TO_SINGLE_PARUET_accountKey": {
+						"value": "[parameters('LS_MULTIPLE_CSV_TO_SINGLE_PARUET_accountKey')]"
+					},
+					"DS_MULTIPLE_CSV_TO_PARUET_DESTINATION_properties_typeProperties_url": {
+						"value": "[parameters('DS_MULTIPLE_CSV_TO_PARUET_DESTINATION_properties_typeProperties_url')]"
+					},
+					"LS_MULTIPLE_CSV_TO_SINGLE_PARUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_MULTIPLE_CSV_TO_SINGLE_PARUET_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

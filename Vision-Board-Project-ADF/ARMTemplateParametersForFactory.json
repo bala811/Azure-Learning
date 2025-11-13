@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Vision-Board-Project-ADF"
+		},
+		"DS_MULTIPLE_CSV_TO_PARUET_DESTINATION_accountKey": {
+			"value": ""
+		},
+		"LS_MULTIPLE_CSV_TO_PARUET_DESTINATION_connectionString": {
+			"value": ""
+		},
+		"LS_MULTIPLE_CSV_TO_SINGLE_PARUET_accountKey": {
+			"value": ""
+		},
+		"DS_MULTIPLE_CSV_TO_PARUET_DESTINATION_properties_typeProperties_url": {
+			"value": "https://bulkdatastore.dfs.core.windows.net/"
+		},
+		"LS_MULTIPLE_CSV_TO_SINGLE_PARUET_properties_typeProperties_url": {
+			"value": "https://bulkloadsource.dfs.core.windows.net/"
+		}
+	}
+}
