@@ -1,0 +1,29 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_MULTIPLE_CSV_TO_PARUET_DESTINATION",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "CSVTOPARQUERTMULTI",
+				"fileSystem": "bulkdata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "UTF8"
+			},
+			{
+				"name": "CURRENT_AGE",
+				"type": "UTF8"
+			}
+		]
+	}
+}

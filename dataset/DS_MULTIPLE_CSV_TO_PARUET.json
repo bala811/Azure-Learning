@@ -1,0 +1,32 @@
+{
+	"name": "DS_MULTIPLE_CSV_TO_PARUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MULTIPLE_CSV_TO_SINGLE_PARUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "industry_sic.csv",
+				"fileSystem": "dataingestion"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SIC_Code",
+				"type": "String"
+			},
+			{
+				"name": "Description",
+				"type": "String"
+			}
+		]
+	}
+}
